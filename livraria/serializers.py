@@ -1,13 +1,13 @@
 from rest_framework.serializers import ModelSerializer
 
 from livraria.models import Categoria, Editora, Autor, Livro
-
+from rest_framework.permissions import IsAuthenticated
 
 class CategoriaSerializer(ModelSerializer):
+    permission_classes = [IsAuthenticated]
     class Meta:
         model = Categoria
         fields = "__all__"
-
 
 class EditoraSerializer(ModelSerializer):
     class Meta:
