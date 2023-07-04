@@ -1,0 +1,1 @@
+from .autor import Autor
